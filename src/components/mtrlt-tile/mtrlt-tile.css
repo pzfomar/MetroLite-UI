@@ -1,0 +1,98 @@
+:host {
+  display: flex;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  aspect-ratio: 1/1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+:host(:hover) {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.front,
+.back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.back {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
+:host(.large) {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+:host(.wide) {
+  grid-column: span 2;
+  aspect-ratio: auto;
+}
+
+:host(.tall) {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 768px) {
+  :host(.large),
+  :host(.wide),
+  :host(.tall) {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 1/1;
+  }
+}
+
+.black {
+  background-color: #000000;
+}
+
+.blue {
+  background-color: #0078d7;
+}
+
+.red {
+  background-color: #e81123;
+}
+
+.green {
+  background-color: #107c10;
+}
+
+.orange {
+  background-color: #f7630c;
+}
+
+.sky-blue {
+  background-color: #00b7c3;
+}
+
+.yellow {
+  background-color: #ffb900;
+}
+
+.purple {
+  background-color: #744da9;
+}

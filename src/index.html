@@ -2,13 +2,45 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <title>Stencil Component Starter</title>
-
+    <link rel="stylesheet" href="/build/metrolite-ui.css" />
     <script type="module" src="/build/metrolite-ui.esm.js"></script>
     <script nomodule src="/build/metrolite-ui.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+    <my-component
+      first="Stencil"
+      middle="'Don't call me a framework'"
+      last="JS"
+    ></my-component>
+    <mtrlt-container
+      ><mtrlt-grid>
+        <mtrlt-tile>
+          <p slot="front">1.1</p>
+          <p slot="back">1.2</p>
+        </mtrlt-tile>
+        <mtrlt-tile>
+          <p>2</p>
+        </mtrlt-tile>
+        <mtrlt-tile>
+          <p slot="front">3.1</p>
+          <p slot="back">3.2</p>
+        </mtrlt-tile>
+        <mtrlt-tile>
+          <p slot="front">4.1</p>
+          <p slot="back">4.2</p>
+        </mtrlt-tile>
+        <mtrlt-tile>
+          <p>5</p>
+        </mtrlt-tile>
+        <mtrlt-tile>
+          <p>6</p>
+        </mtrlt-tile>
+      </mtrlt-grid></mtrlt-container
+    >
   </body>
 </html>

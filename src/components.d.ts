@@ -5,7 +5,29 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { SizeEnum } from "./components/mtrlt-tile/size.enum";
+import { ColorEnum } from "./components/mtrlt-tile/color.enum";
+export { SizeEnum } from "./components/mtrlt-tile/size.enum";
+export { ColorEnum } from "./components/mtrlt-tile/color.enum";
 export namespace Components {
+    interface MtrltContainer {
+    }
+    interface MtrltGrid {
+    }
+    interface MtrltTile {
+        /**
+          * @default ColorEnum.BLACK
+         */
+        "colorBack": ColorEnum;
+        /**
+          * @default ColorEnum.RANDOM
+         */
+        "colorFront": ColorEnum;
+        /**
+          * @default SizeEnum.RANDOM
+         */
+        "size": SizeEnum;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +44,24 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMtrltContainerElement extends Components.MtrltContainer, HTMLStencilElement {
+    }
+    var HTMLMtrltContainerElement: {
+        prototype: HTMLMtrltContainerElement;
+        new (): HTMLMtrltContainerElement;
+    };
+    interface HTMLMtrltGridElement extends Components.MtrltGrid, HTMLStencilElement {
+    }
+    var HTMLMtrltGridElement: {
+        prototype: HTMLMtrltGridElement;
+        new (): HTMLMtrltGridElement;
+    };
+    interface HTMLMtrltTileElement extends Components.MtrltTile, HTMLStencilElement {
+    }
+    var HTMLMtrltTileElement: {
+        prototype: HTMLMtrltTileElement;
+        new (): HTMLMtrltTileElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +69,31 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "mtrlt-container": HTMLMtrltContainerElement;
+        "mtrlt-grid": HTMLMtrltGridElement;
+        "mtrlt-tile": HTMLMtrltTileElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface MtrltContainer {
+    }
+    interface MtrltGrid {
+    }
+    interface MtrltTile {
+        /**
+          * @default ColorEnum.BLACK
+         */
+        "colorBack"?: ColorEnum;
+        /**
+          * @default ColorEnum.RANDOM
+         */
+        "colorFront"?: ColorEnum;
+        /**
+          * @default SizeEnum.RANDOM
+         */
+        "size"?: SizeEnum;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +109,9 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "mtrlt-container": MtrltContainer;
+        "mtrlt-grid": MtrltGrid;
+        "mtrlt-tile": MtrltTile;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +119,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mtrlt-container": LocalJSX.MtrltContainer & JSXBase.HTMLAttributes<HTMLMtrltContainerElement>;
+            "mtrlt-grid": LocalJSX.MtrltGrid & JSXBase.HTMLAttributes<HTMLMtrltGridElement>;
+            "mtrlt-tile": LocalJSX.MtrltTile & JSXBase.HTMLAttributes<HTMLMtrltTileElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
